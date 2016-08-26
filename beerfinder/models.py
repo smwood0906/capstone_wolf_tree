@@ -22,16 +22,22 @@ class Vendor(models.Model):
     def __str__(self):
         return self.name
 
-
 # Create instances of each beer to be associated with locations
 class Beer(models.Model):
     name = models.CharField(max_length=50)
-    bottles = models.BooleanField(default=0)
-    keg = models.BooleanField(default=0)
-    vendor = models.ManyToManyField(Vendor)
 
     def __str__(self):
         return self.name
+
+class Type(models.Model):
+    bottles = models.BooleanField(default=0)
+    keg = models.BooleanField(default=0)
+    vendor = models.ForeignKey(Vendor)
+    beer = models.ForeignKey(Beer)
+
+    def __str__(self):
+        return self.beer.name + " for " + self.vendor.name
+
 
 def lat_lon_save(sender, instance, created, **kwargs):
     if created:

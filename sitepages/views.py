@@ -8,3 +8,14 @@ def home(request):
 def beers(request):
     return render(request, "beers.html")
 
+def contact(request):
+    return render(request, "contact.html")
+
+def tumor(request):
+    return render(request, "tumornator.html")
+
+def about(request):
+    return render(request, "about.html")
+
+
+

@@ -13,12 +13,22 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf.urls.static import static
 from beerfinder import views as bfviews
+from sitepages.admin import user_admin_site
+from blog import views as blogviews
+from schedule import urls as schedule_urls
+
+admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^admin2/', include(user_admin_site.urls)),
     url('^', include('sitepages.urls')),
     url(r'^beerfinder/?$', bfviews.bf),
-]
+    url(r'^news/?$', blogviews.news_main),
+    url(r'^events/?', include(schedule_urls)),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wolf Tree Brewery</title>
+    <link rel="stylesheet" href="{% static 'css/wolf_styles.css' %}">
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js"
+            data-dojo-config="usePlainJson: true, isDebug: false"></script>
+    <script type="text/javascript">require(["mojo/signup-forms/Loader"], function (L) {
+        L.start({"baseUrl": "mc.us14.list-manage.com", "uuid": "742caf094f967d901ce8af3eb", "lid": "a886baad02"})
+    })</script>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyA28Tncg4T22upFoAz_n9LgrMTQ_O3uv9k"
+            type="text/javascript"></script>
+    <link rel="stylesheet" href="{% static "bootstrap/dist/css/bootstrap.css" %}" type="text/css" media="screen">
+    <script type="text/javascript" src="{% static "jquery/dist/jquery.js" %}"></script>
+    <script type="text/javascript" src="{% static "bootstrap/dist/js/bootstrap.js" %}"></script>
+    <link rel="stylesheet" href="{% static "schedule.css" %}" type="text/css" media="screen">
+<body>
+{% include "_nav.html" %}
+<div id="fb-root"></div>
+{% block content %}
+
+{% endblock %}
+{% block body %}
+{% endblock %}
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="content">
+
+</div>
+<div>
+    <div class="fb-like" data-href="https://www.facebook.com/wolf.treebrewery" data-layout="standard" data-action="like"
+         data-size="small" data-show-faces="false" data-share="true"></div>
+</div>
+</body>
+</html>

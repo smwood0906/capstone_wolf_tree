@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+
+
+{% extends "base.html" %}
+
 <head>
     <meta charset="UTF-8">
     <title>WolfTree Brewery</title>
 </head>
+{% block content %}
 <body>
-<span> Wolf Tree Home Page</span>
+<div>
+    <a class="twitter-timeline" data-width="300" data-height="1000" data-link-color="#E81C4F" href="https://twitter.com/wolftreebrewery">
+        Tweets by wolftreebrewery</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 
 </body>
-</html>
+{% endblock %}
