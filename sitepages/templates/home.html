@@ -1,25 +1,28 @@
 
 
 {% extends "base.html" %}
-{% load staticfiles %}
+{% load static %}
 {% block title %} - Home{% endblock %}
 {% block content %}
-<body>
-<div>
-    <a class="twitter-timeline" data-width="300" data-height="1000" data-link-color="#E81C4F" href="https://twitter.com/wolftreebrewery">
-        Tweets by wolftreebrewery</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
-<div id="instafeed"></div>
-</body>
+
+    <div>
+        <a class="twitter-timeline" data-width="300" data-height="1000" data-link-color="#E81C4F"
+           href="https://twitter.com/wolftreebrewery">
+            Tweets by wolftreebrewery</a>
+        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    <div id="instafeed"></div>
+
 {% endblock %}
-{#{% block javascript %}#}
-{#   <script type="text/javascript" src="{% static 'instafeed/instafeed.min.js' %}"></script>#}
-{#    <script type="text/javascript">#}
-{#    var feed = new Instafeed({#}
-{#        get: 'tagged',#}
-{#        tagName: 'awesome',#}
-{#        clientId: 'YOUR_CLIENT_ID'#}
-{#    });#}
-{#    feed.run();#}
-{#</script>#}
-{#{% endblock %}#}
+{% block javascript %}
+    <script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+
+{% endblock %}

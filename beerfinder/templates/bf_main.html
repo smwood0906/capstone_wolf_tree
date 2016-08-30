@@ -43,7 +43,9 @@
                 for (i = 0; i < vendors.length; i++) {
                     marker = new google.maps.Marker({
                         position: new google.maps.LatLng(vendors[i].lat, vendors[i].lng),
-                        map: map
+                        map: map,
+                        icon: "/media/testpost/img/heart.jpg"
+
                     });
 
                     google.maps.event.addListener(marker, 'click', (function (marker, i) {
@@ -96,13 +98,14 @@
                     });
 
                     var infowindow = new google.maps.InfoWindow();
-
                     var marker, i;
+
 
                     for (i = 0; i < vendors.length; i++) {
                         marker = new google.maps.Marker({
                             position: new google.maps.LatLng(vendors[i].lat, vendors[i].lng),
                             map: map
+                            icon: "/media/testpost/img/heart.jpg"
                         });
 
                         google.maps.event.addListener(marker, 'click', (function (marker, i) {

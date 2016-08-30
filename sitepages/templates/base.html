@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{% static "bootstrap/dist/css/bootstrap.css" %}" type="text/css" media="screen">
     <script type="text/javascript" src="{% static "jquery/dist/jquery.js" %}"></script>
     <script type="text/javascript" src="{% static "bootstrap/dist/js/bootstrap.js" %}"></script>
+<script type="text/javascript" src="{% static 'instafeed/instafeed.min.js' %}"></script>
     <link rel="stylesheet" href="{% static "schedule.css" %}" type="text/css" media="screen">
 <body>
 {% include "_nav.html" %}
@@ -26,15 +27,9 @@
 {% endblock %}
 {% block body %}
 {% endblock %}
-<script>(function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+
 {% block javascript %}
+
 {% endblock %}
 <div class="content">
 
@@ -43,5 +38,14 @@
     <div class="fb-like" data-href="https://www.facebook.com/wolf.treebrewery" data-layout="standard" data-action="like"
          data-size="small" data-show-faces="false" data-share="true"></div>
 </div>
+
+    <script type="text/javascript">
+        var feed = new Instafeed({
+            get: 'tagged',
+            tagName: 'wolftreebrewery',
+            clientId: 'f65b1c4473c54577bd54eae4feabd279'
+        });
+        feed.run();
+    </script>
 </body>
 </html>
