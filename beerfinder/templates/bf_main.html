@@ -5,6 +5,19 @@
     BeerFinder
     <div id="map"></div>
 
+
+    <div>
+        <form>
+            <label for="zip">Please Enter Your Zip Code </label>
+            <input type="text" id="zip">
+            <button type="button" class="text" id="sub">Submit</button>
+
+        </form>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+
     <script type="text/javascript">
         var vendors = {{ markers|safe }};
         console.log(vendors.length);
@@ -62,12 +75,63 @@
         }
 
     </script>
-    <div>
-        <form>
-             <label for="zip">Please Enter Your Zip Code </label>
-             <input type="text" id="zip">
-            <button type="button" class="text" id="sub">Submit</button>
 
-        </form>
-    </div>
+    <script type="text/javascript">
+        $("#sub").click(function (event) {
+            event.preventDefault();
+            var vendors = {{ markers|safe }};
+            var zipcode = $("#zip").val();
+            $.ajax({
+                url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + zipcode,
+                method: 'GET',
+                success: function (data) {
+                    var pos = {
+                        lat: data.results[0].geometry.location.lat,
+                        lng: data.results[0].geometry.location.lng
+                    };
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 10,
+                        center: {lat: pos.lat, lng: pos.lng},
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    });
+
+                    var infowindow = new google.maps.InfoWindow();
+
+                    var marker, i;
+
+                    for (i = 0; i < vendors.length; i++) {
+                        marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(vendors[i].lat, vendors[i].lng),
+                            map: map
+                        });
+
+                        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                            return function () {
+
+                                var html = "<h1>" + vendors[i].name + "</h1>" + vendors[i].address + "<br>" + vendors[i].phone + "<h5>Beers</h5>";
+                                for (var z = 0; z < vendors[i].beers.length; z++) {
+                                    var btls = "";
+                                    var kg = "";
+                                    if (vendors[i].beers[z].bottles == 'True') {
+                                        btls = "Bottles: Yes"
+                                    } else {
+                                        btls = "Bottles: No"
+                                    }
+                                    if (vendors[i].beers[z].keg == 'True') {
+                                        kg = "Keg: Yes"
+                                    } else {
+                                        kg = "Keg: No"
+                                    }
+                                    html += vendors[i].beers[z].name + '<br><ul><li>' + btls + '</li><li>' + kg + '</li></ul>'
+                                }
+
+                                infowindow.setContent(html);
+                                infowindow.open(map, marker);
+                            }
+                        })(marker, i));
+                    }
+                }
+            })
+        })
+    </script>
 {% endblock %}
