@@ -17,6 +17,7 @@ class Vendor(models.Model):
     city = models.CharField( max_length=64, default="Seal Rock")
     state = models.CharField( max_length=2, default="OR")
     zip_code = models.CharField(max_length=5, default="97376")
+    phone_number = models.CharField(max_length=15, default="(541) 563-6181")
     marker = models.ForeignKey(Marker,null= True, blank = True)
 
     def __str__(self):

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'beerfinder',
     'schedule',
     'djangobower',
+'easy_thumbnails',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,5 @@ BOWER_INSTALLED_APPS = (
     'jquery',
     'bootstrap'
 )
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

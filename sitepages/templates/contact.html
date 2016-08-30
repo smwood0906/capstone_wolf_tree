@@ -1,12 +1,24 @@
 {% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Contact WolfTree</title>
-</head>
 {% block content %}
-<body>
-Contact Page Content
+<section id="contactUs" >
+  <div class="container">
+    <div class="row">
+      <div class="heading">
+        <!-- Heading -->
+        <h2>Contact Wolf Tree</h2>
+        <p>Thank you for visiting Wolf Tree Brewery! If you would like to get into contact with us, please fill out the form below.</p>
+      </div>
+    </div>
+    <div class="row mrgn30">
+        <div class="col-sm-12 col-md-8">
+         		<!--NOTE: Update your email Id in "contact_me.php" file in order to receive emails from your contact form-->
 
-</body>
+<form role="form" action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+</section>
 {% endblock %}

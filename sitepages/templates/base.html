@@ -4,7 +4,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Wolf Tree Brewery</title>
+    <title>Wolf Tree Brewery{% block title %}{% endblock %}</title>
+
     <link rel="stylesheet" href="{% static 'css/wolf_styles.css' %}">
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js"
             data-dojo-config="usePlainJson: true, isDebug: false"></script>
@@ -33,6 +34,8 @@
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+{% block javascript %}
+{% endblock %}
 <div class="content">
 
 </div>

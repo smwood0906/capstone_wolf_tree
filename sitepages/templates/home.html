@@ -1,17 +1,25 @@
 
 
 {% extends "base.html" %}
-
-<head>
-    <meta charset="UTF-8">
-    <title>WolfTree Brewery</title>
-</head>
+{% load staticfiles %}
+{% block title %} - Home{% endblock %}
 {% block content %}
 <body>
 <div>
     <a class="twitter-timeline" data-width="300" data-height="1000" data-link-color="#E81C4F" href="https://twitter.com/wolftreebrewery">
         Tweets by wolftreebrewery</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
-
+<div id="instafeed"></div>
 </body>
 {% endblock %}
+{#{% block javascript %}#}
+{#   <script type="text/javascript" src="{% static 'instafeed/instafeed.min.js' %}"></script>#}
+{#    <script type="text/javascript">#}
+{#    var feed = new Instafeed({#}
+{#        get: 'tagged',#}
+{#        tagName: 'awesome',#}
+{#        clientId: 'YOUR_CLIENT_ID'#}
+{#    });#}
+{#    feed.run();#}
+{#</script>#}
+{#{% endblock %}#}
