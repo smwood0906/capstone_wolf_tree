@@ -1,6 +1,45 @@
-.nav {
-    display: inline;
+nav {
+    display:block;
+    text-align: right;
 }
+
+nav ul {
+    margin: 0;
+    padding:0;
+    list-style: none;
+}
+
+.nav a {
+    display: block;
+    position: relative;
+}
+
+.nav {
+    vertical-align: top;
+    display: inline-block;
+}
+
+nav li {
+    position: relative;
+}
+
+.nav > li {
+    float: left;
+
+}
+
+.nav li a:first-child:nth-last-child(2):before{
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: 50%;
+    right: 5px;
+}
+
+
+
+
 #map {
             height: 500px;
             max-width: 600px;
@@ -11,3 +50,8 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.hideable{
+    display: none;
+}
+

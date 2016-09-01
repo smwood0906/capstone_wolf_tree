@@ -6,6 +6,7 @@ urlpatterns = [
     url(r'^beers/?$', views.beers),
     url(r'^contact/?$', views.contact, name='contact'),
     url(r'^tumornator/?$', views.tumor),
-    url(r'^about/?$', views.about),
+    url(r'^staff/?$', views.staff),
+    url(r'^brewery/?$', views.brewery),
 
 ]

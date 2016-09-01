@@ -57,8 +57,11 @@ def contact(request):
 def tumor(request):
     return render(request, "tumornator.html")
 
-def about(request):
-    return render(request, "about.html")
+def staff(request):
+    return render(request, "staff.html")
+
+def brewery(request):
+    return render(request, "brewery.html")
 
 
 
