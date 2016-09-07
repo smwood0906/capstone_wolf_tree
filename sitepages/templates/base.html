@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
 {% load static %}
 
 <head>
@@ -19,19 +18,27 @@
     <script type="text/javascript" src="{% static "bootstrap/dist/js/bootstrap.js" %}"></script>
 {#<script type="text/javascript" src="{% static 'instafeed/instafeed.min.js' %}"></script>#}
     <link rel="stylesheet" href="{% static "schedule.css" %}" type="text/css" media="screen">
-<body>
-{% include "_nav.html" %}
 
-{% block content %}
+<div class="wrapper">
+    <header class="header">
+     <div class="navigation">
+        {% include "_nav.html" %}
+     </div>
+    </header>
 
-{% endblock %}
+    <div class="main">
 
-{% block body %}
-{% endblock %}
+    {% block content %}
 
-{% block javascript %}
+    {% endblock %}
+    </div>
+    {% block body %}
+    {% endblock %}
 
-{% endblock %}
+    {% block javascript %}
+
+    {% endblock %}
+</div>
 
 
 {#    <script type="text/javascript">#}
@@ -42,5 +49,4 @@
 {#        });#}
 {#        feed.run();#}
 {#    </script>#}
-</body>
-</html>
+

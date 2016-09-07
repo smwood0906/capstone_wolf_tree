@@ -3,7 +3,7 @@
 
 {% block content %}
     BeerFinder
-    <div id="map"></div>
+<div id="map"></div>
 
 
     <div>
@@ -44,7 +44,7 @@
                     marker = new google.maps.Marker({
                         position: new google.maps.LatLng(vendors[i].lat, vendors[i].lng),
                         map: map,
-                        icon: "/media/testpost/img/heart.jpg"
+                       icon: "/staticfiles/images/wolf_tree_pin.png"
 
                     });
 
@@ -104,8 +104,8 @@
                     for (i = 0; i < vendors.length; i++) {
                         marker = new google.maps.Marker({
                             position: new google.maps.LatLng(vendors[i].lat, vendors[i].lng),
-                            map: map
-                            icon: "/media/testpost/img/heart.jpg"
+                            map: map,
+                            icon: "/staticfiles/images/wolf_tree_pin.png"
                         });
 
                         google.maps.event.addListener(marker, 'click', (function (marker, i) {

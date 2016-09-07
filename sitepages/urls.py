@@ -8,5 +8,8 @@ urlpatterns = [
     url(r'^tumornator/?$', views.tumor),
     url(r'^staff/?$', views.staff),
     url(r'^brewery/?$', views.brewery),
+    url(r'^farm/?$', views.farm),
+    url(r'^all/?$', views.all),
+    url(r'^subscribe/?$', views.subscribe),
 
 ]
