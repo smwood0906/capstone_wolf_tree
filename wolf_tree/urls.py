@@ -30,6 +30,7 @@ urlpatterns = [
     url('^', include('sitepages.urls')),
     url(r'^beerfinder/?$', bfviews.bf),
     url(r'^news/?$', blogviews.post_list),
+    url(r'^news/(?P<cat>[-\w]+)/(?P<slug>[-\w]+)/', blogviews.post, name='blog'),
     url(r'^events/?', include(schedule_urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL,
                                                                                            document_root=settings.MEDIA_ROOT)

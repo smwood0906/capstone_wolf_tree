@@ -1,7 +1,8 @@
-.wrapper {
-  display: flex;
-  flex-flow: row wrap;
-}
+/*.wrapper {*/
+  /*display: flex;*/
+    /*flex-direction: column;*/
+    /*flex-flow: row wrap;*/
+/*}*/
 
 .header, .main, .nav, .aside, .footer {
   flex: 1 100%;
@@ -9,10 +10,32 @@
 
 .aside {
     background-color: lightblue;
+    position: absolute;
+    right: 0;
+    top:45px;
 }
 
 .footer {
     background-color: orange;
+}
+
+#carousel{
+    position: relative;
+}
+
+.teaser-item{
+    width: 30%;
+    background-color: salmon;
+}
+#teasers{
+    display:flex;
+    justify-content: space-between;
+}
+
+#home-container{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
 }
 
 @media all and (min-width: 600px) {
@@ -120,7 +143,7 @@ nav ul {
 
 .nav > li:hover > ul {
     left: auto;
-    margin-top: 5px;
+    margin-top: 0px;
     min-width: 100%;
 }
 
@@ -153,11 +176,13 @@ nav ul {
 
 #map {
     height: 500px;
-    max-width: 600px;
+    width: 600px;
     margin: auto;
 }
 
 .content {
+    display:flex;
+    justify-content: flex-start;
     width: 95%;
     margin-left: auto;
     margin-right: auto;
@@ -175,9 +200,9 @@ nav ul {
 /* Large Screens*/
 
 .navigation{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
+    /*display: flex;*/
+    /*flex-flow: row wrap;*/
+    /*justify-content: flex-end;*/
     background-color: #2b542c;
 }
 /* Medium Screens*/

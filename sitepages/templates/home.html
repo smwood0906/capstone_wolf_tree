@@ -5,28 +5,52 @@
 {% block title %} - Home{% endblock %}
 {% block content %}
     <script type="text/javascript" src="{% static 'js/home.js' %}"></script>
-<div class="content">
 
-    <div class="fb-like" data-href="https://www.facebook.com/wolf.treebrewery" data-layout="standard" data-action="like"
-         data-size="small" data-show-faces="false" data-share="true"></div>
-</div>
-    <div class="aside">
-        <a class="twitter-timeline" data-width="300" data-height="1000" data-link-color="#E81C4F"
-           href="https://twitter.com/wolftreebrewery">
-            Tweets by wolftreebrewery</a>
-        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <section id="home-container">
+    <div class="content">
+
+        {#    <div id="instafeed"></div>#}
+        <div id="carousel">
+            <ul class="main" id="slideshow">
+                <li id="slide1" class="hideable" style="display:block;"><img
+                        src="{% static 'images/ranchscape_opt.jpg' %}">
+                </li>
+                <li id="slide2" class="hideable" style="display:none;"><img src="{% static 'images/glass_opt.jpg' %}">
+                </li>
+                <li id="slide3" class="hideable" style="display:none;"><img src="{% static 'images/tribeer_opt.jpg' %}">
+                </li>
+            </ul>
+            <form>
+                <input type="button" value="Back" onclick="toggleSlide(false)"/>
+                <input type="button" value="Forward" onclick="toggleSlide(true)"/>
+            </form>
+        </div>
+
+        <div class="aside">
+            <a class="twitter-timeline" data-width="300" data-height="1000" data-link-color="#E81C4F"
+               href="https://twitter.com/wolftreebrewery">
+                Tweets by wolftreebrewery</a>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+
     </div>
-{#    <div id="instafeed"></div>#}
-<ul class="main" id="slideshow">
-    <li id="slide1" class="hideable" style="display:block;"><img src="{% static 'images/BigKitty.jpg' %}"></li>
-    <li id="slide2" class="hideable" style="display:none;"><img src="{% static 'images/ElwayBridge.jpg' %}"></li>
-    <li id="slide3" class="hideable" style="display:none;"><img src="{% static 'images/SarahBubbles.jpg' %}"></li>
-    </ul>
+    <section id="teasers">
 
-    <form>
-    <input type="button" value="Back" onclick="toggleSlide(false)"/>
-    <input type="button" value="Forward" onclick="toggleSlide(true)"/>
-    </form>
+        <div id="beers" class="teaser-item">
+            Beers
+        </div>
+
+        <div id="finder" class="teaser-item">
+            Beerfinder
+        </div>
+
+        <div id="events" class="teaser-item">
+            Events
+        </div>
+
+    </section>
+    </section>
 {% endblock %}
 {% block javascript %}
 

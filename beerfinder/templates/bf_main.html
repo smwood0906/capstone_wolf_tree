@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-
+{% block title %} - Beerfinder{% endblock %}
 {% block content %}
     BeerFinder
 <div id="map"></div>
@@ -40,11 +40,16 @@
 
                 var marker, i;
 
+                var image = {
+                    url: 'http://localhost:8000/static/images/wolf_tree_pin.png',
+                    anchor: new google.maps.Point(12, 58)
+                };
+
                 for (i = 0; i < vendors.length; i++) {
                     marker = new google.maps.Marker({
                         position: new google.maps.LatLng(vendors[i].lat, vendors[i].lng),
                         map: map,
-                       icon: "/staticfiles/images/wolf_tree_pin.png"
+                        icon: image
 
                     });
 
@@ -100,12 +105,17 @@
                     var infowindow = new google.maps.InfoWindow();
                     var marker, i;
 
+                    var image = {
+                    url: 'http://localhost:8000/static/images/wolf_tree_pin.png',
+                    anchor: new google.maps.Point(12, 58)
+                };
+
 
                     for (i = 0; i < vendors.length; i++) {
                         marker = new google.maps.Marker({
                             position: new google.maps.LatLng(vendors[i].lat, vendors[i].lng),
                             map: map,
-                            icon: "/staticfiles/images/wolf_tree_pin.png"
+                            icon: image
                         });
 
                         google.maps.event.addListener(marker, 'click', (function (marker, i) {

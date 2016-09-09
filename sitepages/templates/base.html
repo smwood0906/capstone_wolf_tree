@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Wolf Tree Brewery{% block title %}{% endblock %}</title>
 
-    <link rel="stylesheet" href="{% static 'css/wolf_styles.css' %}">
+
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js"
             data-dojo-config="usePlainJson: true, isDebug: false"></script>
     <script type="text/javascript">require(["mojo/signup-forms/Loader"], function (L) {
@@ -18,7 +18,7 @@
     <script type="text/javascript" src="{% static "bootstrap/dist/js/bootstrap.js" %}"></script>
 {#<script type="text/javascript" src="{% static 'instafeed/instafeed.min.js' %}"></script>#}
     <link rel="stylesheet" href="{% static "schedule.css" %}" type="text/css" media="screen">
-
+<link rel="stylesheet" href="{% static 'css/wolf_styles.css' %}">
 <div class="wrapper">
     <header class="header">
      <div class="navigation">
@@ -28,10 +28,12 @@
 
     <div class="main">
 
-    {% block content %}
+        {% block content %}
 
-    {% endblock %}
+        {% endblock %}
+
     </div>
+
     {% block body %}
     {% endblock %}
 

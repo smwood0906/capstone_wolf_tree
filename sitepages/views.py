@@ -65,8 +65,10 @@ def brewery(request):
 
 def all(request):
     return render(request, "all.html")
+
 def farm(request):
     return render(request, "farm.html")
+
 def subscribe(request):
     return render(request, "subscribe.html")
 
