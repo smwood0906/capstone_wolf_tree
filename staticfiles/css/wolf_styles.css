@@ -1,59 +1,119 @@
-/*.wrapper {*/
-  /*display: flex;*/
-    /*flex-direction: column;*/
-    /*flex-flow: row wrap;*/
-/*}*/
-
-.header, .main, .nav, .aside, .footer {
-  flex: 1 100%;
+@font-face {
+    font-family: "wolftree-head";
+    src: url('../fonts/nashvill.ttf')
 }
 
-.aside {
-    background-color: lightblue;
-    position: absolute;
-    right: 0;
-    top:45px;
+@font-face {
+    font-family: "wolftree-emphasis";
+    src: url('../fonts/WhitePine-Regular.otf')
+}
+
+@font-face {
+    font-family: "wolftree-emphasis";
+    src: url('../fonts/WhitePine-Regular.otf')
+}
+
+p {
+    font-family: 'Vollkorn', serif;
+}
+
+
+#feed {
+    top: 45px;
 }
 
 .footer {
-    background-color: orange;
+    background-color: red;
 }
 
-#carousel{
-    position: relative;
-}
-
-.teaser-item{
+.teaser-item {
+    display: flex;
+    flex-direction: column;
     width: 30%;
     background-color: salmon;
 }
-#teasers{
-    display:flex;
+
+#home-container {
+    display: flex;
     justify-content: space-between;
+
 }
 
-#home-container{
+#slideshow{
+    padding-left: 0;
+}
+
+#caro-tease{
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
+}
+
+#carousel {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#teasers {
+    display: flex;
     justify-content: space-between;
+    margin: 25px;
+}
+
+.basic-text{
+    font-family: 'Vollkorn', serif;
+    font-size: 1em;
 }
 
 @media all and (min-width: 600px) {
-    .aside { flex: 1 auto; }
+    .aside {
+        flex: 1 auto;
+    }
 }
 
 @media all and (min-width: 800px) {
-     .main { flex: 2 0px; }
+    .main {
+        flex: 2 0px;
+    }
 
-  .aside-1 { order: 1; }
-  .main    { order: 2; }
-  .aside-2 { order: 3; }
-  .footer  { order: 4; }
+    .aside-1 {
+        order: 1;
+    }
+
+    .main {
+        order: 2;
+    }
+
+    .aside-2 {
+        order: 3;
+    }
+
+    .footer {
+        order: 4;
+    }
 }
+
+h2 {
+    font-family: "wolftree-body";
+    font-weight: bold;
+}
+
 nav {
-    display: block;
-    text-align: right;
+    display: flex;
+    font-family: "wolftree-body";
+    justify-content:space-around;
 }
+
+#nav-container{
+    display: flex;
+    justify-content: space-between ;
+    flex-flow: wrap;
+    flex-basis: 100%;
+     background-color: grey;
+    opacity: .5;
+}
+
+
 
 nav ul {
     margin: 0;
@@ -61,21 +121,41 @@ nav ul {
     list-style: none;
 }
 
-.nav a {
-    display: block;
-    background: #fff;
-    color: #111;
-    text-decoration: none;
-    letter-spacing: 2px;
-
-    position: relative;
+figure{
+    width: 13%
 }
 
 .nav {
     vertical-align: top;
-    display: inline-block;
     border-radius: 6px;
 }
+
+#banner{
+    display: flex;
+    flex-direction: column;
+    background-color: #2b542c;
+}
+
+#logo-top{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#head-text{
+    color: black;
+    font-size: 5em;
+    font-family: wolftree-head;
+}
+.nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+
 
 .nav li {
     position: relative;
@@ -117,12 +197,6 @@ nav ul {
 .nav > li:last-child > a {
     border-radius: 0 4px 0 0;
 }
-
-.nav li li a {
-    margin-top: 1px;
-}
-
-
 
 .nav li a:first-child:nth-last-child(2):before {
     content: "";
@@ -180,31 +254,32 @@ nav ul {
     margin: auto;
 }
 
-.content {
-    display:flex;
-    justify-content: flex-start;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-}
+/*.content {*/
+    /*display: flex;*/
+    /*justify-content: flex-start;*/
+    /*width: 95%;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+/*}*/
 
 .hideable {
     display: none;
 }
 
-.main{
+.main {
     display: flex;
-    /*background-color: grey;*/
 
 }
+
 /* Large Screens*/
 
-.navigation{
+.navigation {
     /*display: flex;*/
     /*flex-flow: row wrap;*/
     /*justify-content: flex-end;*/
-    background-color: #2b542c;
+
 }
+
 /* Medium Screens*/
 
 @media all and (max-width: 800px) {
@@ -212,10 +287,11 @@ nav ul {
         justify-content: space-around;
     }
 }
+
 /* Small Screens*/
 @media all and (max-width: 500px) {
-  .navigation {
-    flex-direction: column;
-  }
+    .navigation {
+        flex-direction: column;
+    }
 }
 

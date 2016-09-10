@@ -2,7 +2,7 @@
 {% load scheduletags i18n %}
 
 {% block body %}
-{% include "schedule/_dialogs.html" %}
+{#{% include "schedule/_dialogs.html" %}#}
 <div class="row row-centered">
   <div class="calendarname">{{ calendar.name }}</div>
   {% prevnext "month_calendar" calendar period "F Y"%}
