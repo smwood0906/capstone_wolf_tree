@@ -15,11 +15,12 @@
 
 p {
     font-family: 'Vollkorn', serif;
+    text-align: center;
 }
-
 
 #feed {
     top: 45px;
+    width: 100%;
 }
 
 .footer {
@@ -33,17 +34,25 @@ p {
     background-color: salmon;
 }
 
+.teaser-item p {
+    text-decoration: none;
+}
+
+#twitter-widget-0 {
+    width: 100% !important;
+}
+
 #home-container {
     display: flex;
     justify-content: space-between;
 
 }
 
-#slideshow{
+#slideshow {
     padding-left: 0;
 }
 
-#caro-tease{
+#caro-tease {
     display: flex;
     flex-direction: column;
 }
@@ -53,67 +62,80 @@ p {
     flex-direction: column;
 }
 
-
 #teasers {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin: 25px;
 }
 
-.basic-text{
+#bf-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.basic-text {
     font-family: 'Vollkorn', serif;
     font-size: 1em;
 }
 
-@media all and (min-width: 600px) {
-    .aside {
-        flex: 1 auto;
-    }
+/*@media all and (min-width: 600px) {*/
+/*.aside {*/
+/*flex: 1 auto;*/
+/*}*/
+/*}*/
+
+/*@media all and (min-width: 800px) {*/
+/*.main {*/
+/*flex: 2 0px;*/
+/*}*/
+
+/*.aside-1 {*/
+/*order: 1;*/
+/*}*/
+
+/*.main {*/
+/*order: 2;*/
+/*}*/
+
+/*.aside-2 {*/
+/*order: 3;*/
+/*}*/
+
+/*.footer {*/
+/*order: 4;*/
+/*}*/
+/*}*/
+a h2 {
+    font-family: "wolftree-head";
+
 }
 
-@media all and (min-width: 800px) {
-    .main {
-        flex: 2 0px;
-    }
-
-    .aside-1 {
-        order: 1;
-    }
-
-    .main {
-        order: 2;
-    }
-
-    .aside-2 {
-        order: 3;
-    }
-
-    .footer {
-        order: 4;
-    }
+h3 {
+    font-family: wolftree-emphasis;
+    font-weight: bold;
 }
 
 h2 {
-    font-family: "wolftree-body";
-    font-weight: bold;
+    font-family: "wolftree-head";
 }
 
 nav {
     display: flex;
-    font-family: "wolftree-body";
-    justify-content:space-around;
+    font-family: "wolftree-emphasis";
+    justify-content: space-around;
+    margin-top: 1%;
 }
 
-#nav-container{
+#nav-container {
     display: flex;
-    justify-content: space-between ;
+    justify-content: space-between;
     flex-flow: wrap;
     flex-basis: 100%;
-     background-color: grey;
-    opacity: .5;
+    background-color: rgba(153, 188, 170, 0.3);
+
 }
-
-
 
 nav ul {
     margin: 0;
@@ -121,32 +143,43 @@ nav ul {
     list-style: none;
 }
 
-figure{
+figure {
     width: 13%
 }
 
 .nav {
     vertical-align: top;
-    border-radius: 6px;
+
 }
 
-#banner{
+#banner {
     display: flex;
     flex-direction: column;
     background-color: #2b542c;
 }
 
-#logo-top{
-    display:flex;
+#banner-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: .5;
+    margin-top: 6%;
+    margin-left: 3%;
+    margin-bottom: 1%;
+}
+
+#logo-top {
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#head-text{
+#head-text {
     color: black;
     font-size: 5em;
     font-family: wolftree-head;
 }
+
 .nav a {
     display: block;
     color: white;
@@ -155,22 +188,23 @@ figure{
     position: relative;
 }
 
-
-
 .nav li {
     position: relative;
 }
 
 .nav > li {
     float: left;
-    border-bottom: 4px #111 solid;
+    border-bottom: 2px #111 solid;
     margin-right: 1px;
 }
 
 .nav > li > a {
     margin-bottom: 1px;
-
+    transition-property: background-color, color;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
 }
+
 
 .nav > li:hover,
 .nav > li:hover > a {
@@ -210,9 +244,12 @@ figure{
 .nav ul {
     position: absolute;
     white-space: nowrap;
-    border-bottom: 5px solid orange;
+    border-bottom: 2px solid orange;
     z-index: 1;
     left: -99999em;
+    background-color: black;
+    padding: 15px;
+    line-height: 2;
 }
 
 .nav > li:hover > ul {
@@ -255,11 +292,11 @@ figure{
 }
 
 /*.content {*/
-    /*display: flex;*/
-    /*justify-content: flex-start;*/
-    /*width: 95%;*/
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
+/*display: flex;*/
+/*justify-content: flex-start;*/
+/*width: 95%;*/
+/*margin-left: auto;*/
+/*margin-right: auto;*/
 /*}*/
 
 .hideable {
@@ -268,7 +305,8 @@ figure{
 
 .main {
     display: flex;
-
+    justify-content: center;
+    width: 100%;
 }
 
 /* Large Screens*/
@@ -294,4 +332,50 @@ figure{
         flex-direction: column;
     }
 }
+
+.tumor-item {
+    width: 75%;
+    align-items: center;
+
+}
+
+#the-man {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#the-beer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#the-cause {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#beer-container, #brewery-container, #tumor-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+#no-farm-dog, #farm-dog-beers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.beer-item, .brewery-items {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    align-items: center;
+}
+
 

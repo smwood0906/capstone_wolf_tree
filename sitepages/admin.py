@@ -33,21 +33,10 @@ class UserAdmin(AdminSite):
         """
         return request.user.is_active
 
-from schedule.models import Calendar, Event, CalendarRelation, Rule
-from schedule.forms import EventAdminForm
-
-class CalendarAdminOptions(admin.ModelAdmin):
-    prepopulated_fields = {"slug": ("name",)}
-    search_fields = ['name']
 
 
-class EventAdmin(admin.ModelAdmin):
-    form = EventAdminForm
 
 user_admin_site = UserAdmin(name='usersadmin')
-user_admin_site.register(Calendar, CalendarAdminOptions)
-user_admin_site.register(Event, EventAdmin)
-user_admin_site.register([Rule, CalendarRelation])
 
 
 user_admin_site.register(Vendor)

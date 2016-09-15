@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from beerfinder import views as bfviews
 from sitepages.admin import user_admin_site
 from blog import views as blogviews
-from schedule import urls as schedule_urls
+
 
 admin.autodiscover()
 
@@ -31,6 +31,6 @@ urlpatterns = [
     url(r'^beerfinder/?$', bfviews.bf),
     url(r'^news/?$', blogviews.post_list),
     url(r'^news/(?P<cat>[-\w]+)/(?P<slug>[-\w]+)/', blogviews.post, name='blog'),
-    url(r'^events/?', include(schedule_urls)),
+    url(r'^events/', include('calendarium.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL,
                                                                                            document_root=settings.MEDIA_ROOT)

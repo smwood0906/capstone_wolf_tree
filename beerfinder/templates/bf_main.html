@@ -1,19 +1,22 @@
 {% extends 'base.html' %}
 
 {% block title %} - Beerfinder{% endblock %}
+
 {% block content %}
-    BeerFinder
-<div id="map"></div>
+    <section id="bf-container">
+        <h2>BeerFinder</h2>
+        <div id="map"></div>
 
 
-    <div>
-        <form>
-            <label for="zip">Please Enter Your Zip Code </label>
-            <input type="text" id="zip">
-            <button type="button" class="text" id="sub">Submit</button>
+        <div>
+            <form>
+                <label for="zip">Please Enter Your Zip Code </label>
+                <input type="text" id="zip">
+                <button type="button" class="text" id="sub">Submit</button>
 
-        </form>
-    </div>
+            </form>
+        </div>
+    </section>
 {% endblock %}
 
 {% block javascript %}
@@ -106,9 +109,9 @@
                     var marker, i;
 
                     var image = {
-                    url: 'http://localhost:8000/static/images/wolf_tree_pin.png',
-                    anchor: new google.maps.Point(12, 58)
-                };
+                        url: 'http://localhost:8000/static/images/wolf_tree_pin.png',
+                        anchor: new google.maps.Point(12, 58)
+                    };
 
 
                     for (i = 0; i < vendors.length; i++) {
@@ -147,4 +150,5 @@
             })
         })
     </script>
+
 {% endblock %}

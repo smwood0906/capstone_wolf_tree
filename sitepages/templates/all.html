@@ -1,74 +1,85 @@
 {% extends "base.html" %}
 {% block title %} - Beers{% endblock %}
 {% block content %}
-<div class="beers">
-    <div class="individual">
-        <h2> SPRUCE TIP ALE</h2>
-        <p>Crisp and malty unfiltered American Brown Ale packed with spruce tips and a light citrus flavor.<br>
-        6.5% ABV </p>
-    </div>
-    <div class="individual">
-            <h2> BARREL AGED SPRUCE TIP ALE</h2>
-            <p>Spruce Tip Ale aged in red wine barrels.  Blending oak and red wine flavors with our flagship beer resulting in a super smooth easy drinking brown ale. *Very limited availibility<br>
-            6.5% ABV </p>
-        </div>
-    <div class="individual">
-                <h2> BULL OF THE WOODS BARLEY WINE</h2>
-                <p>Our take on barley wine, fermented in oak wine barrels.  Malty and smooth, but it packs a punch.<br>
-                10.5% ABV </p>
+    <section id="beer-container" class="beers">
+        <article id="no-farm-dog">
+            <div class="beer-item">
+                <h2> SPRUCE TIP ALE</h2>
+                <p>Crisp and malty unfiltered American Brown Ale packed with spruce tips and a light citrus flavor.<br>
+                    6.5% ABV </p>
             </div>
-     <div class="individual">
-                    <h2> TAIL HOLD IPA </h2>
-                    <p> Hops and spruce tips in a golden IPA.  I'm sure you've had nothing like this before. <br>
+            <div class="beer-item">
+                <h2> BARREL AGED SPRUCE TIP ALE</h2>
+                <p>Spruce Tip Ale aged in red wine barrels. Blending oak and red wine flavors with our flagship beer
+                    resulting in a super smooth easy drinking brown ale. *Very limited availibility<br>
+                    6.5% ABV </p>
+            </div>
+            <div class="beer-item">
+                <h2> BULL OF THE WOODS BARLEY WINE</h2>
+                <p>Our take on barley wine, fermented in oak wine barrels. Malty and smooth, but it packs a punch.<br>
+                    10.5% ABV </p>
+            </div>
+            <div class="beer-item">
+                <h2> TAIL HOLD IPA </h2>
+                <p> Hops and spruce tips in a golden IPA. I'm sure you've had nothing like this before. <br>
                     6.0% ABV 60 IBU</p>
-                </div>
-    <div class="individual">
-                    <h2> INDIA BROWN ALE </h2>
-                    <p> Big, malty, bitter IBA.  Only brewed a few times a year.  <br>
+            </div>
+            <div class="beer-item">
+                <h2> INDIA BROWN ALE </h2>
+                <p> Big, malty, bitter IBA. Only brewed a few times a year. <br>
                     6.0% ABV 100 IBU </p>
-                </div>
-     <div class="individual">
-                    <h2> POM EL HEFE </h2>
-                    <p> A tart hefeweizen brewed with pomegranate.  Perfect beer for a hot summer day. <br>
+            </div>
+            <div class="beer-item">
+                <h2> POM EL HEFE </h2>
+                <p> A tart hefeweizen brewed with pomegranate. Perfect beer for a hot summer day. <br>
                     6.2% ABV </p>
-                </div>
-    <div class="individual">
-                    <h2> SPRUCE TIP IRISH CHOCOLATE STOUT </h2>
-                    <p> A unfiltered dark chocolate stout brewed with Sitka Spruce tips harvested at the brewery. This is a rich, chocolaty, bitter stout that is balanced well with the sweetness of the spruce tips.<br>
+            </div>
+            <div class="beer-item">
+                <h2> SPRUCE TIP IRISH CHOCOLATE STOUT </h2>
+                <p> A unfiltered dark chocolate stout brewed with Sitka Spruce tips harvested at the brewery. This is a
+                    rich, chocolaty, bitter stout that is balanced well with the sweetness of the spruce tips.<br>
                     5.5% ABV </p>
-                </div>
-    <div class="individual">
-                    <h2> RANCH PATROL ROJA </h2>
-                    <p> A hoppy red ale brewed with 4 types of hops and 4 different malts. This beer has a rugged, spicy and piney character upfront with a malty backbone, creating a smooth and clean finish.  Perfect beer to take along on ranch patrol.<br>
-                    5.5% ABV  55 IBU </p>
-                </div>
-     <div class="individual">
-                    <h2> DONKER BOOM </h2>
-                    <p> A crisp, malty Triple IPA brewed with 5 different types of hops.  Big citrus and tropical fruit tones along with intense pine, and woodsy aromas.   This unfiltered Triple IPA is only brewed a few times a year, and it pairs well with sunshine, Golden Retrievers and clothes fresh out of the dryer.  <br>
+            </div>
+            <div class="beer-item">
+                <h2> RANCH PATROL ROJA </h2>
+                <p> A hoppy red ale brewed with 4 types of hops and 4 different malts. This beer has a rugged, spicy and
+                    piney character upfront with a malty backbone, creating a smooth and clean finish. Perfect beer to
+                    take along on ranch patrol.<br>
+                    5.5% ABV 55 IBU </p>
+            </div>
+            <div class="beer-item">
+                <h2> DONKER BOOM </h2>
+                <p> A crisp, malty Triple IPA brewed with 5 different types of hops. Big citrus and tropical fruit tones
+                    along with intense pine, and woodsy aromas. This unfiltered Triple IPA is only brewed a few times a
+                    year, and it pairs well with sunshine, Golden Retrievers and clothes fresh out of the dryer. <br>
                     6.0% ABV </p>
-                </div>
-    <div class="individual">
-                    <h2> TUMORNATOR </h2>
-                    <p> A dark, sweet, malty Belgian Ale brewed with Sitka spruce tips and tart cherries. Fermented and aged in red wine barrels.<br>
+            </div>
+            <div class="beer-item">
+                <h2> TUMORNATOR </h2>
+                <p> A dark, sweet, malty Belgian Ale brewed with Sitka spruce tips and tart cherries. Fermented and aged
+                    in red wine barrels.<br>
                     12.5% ABV 100 IBU </p>
-                </div>
-      <h1> Farm Dog Beers</h1>
-<div class="beers">
-    <div class="individual">
-        <h2> CAMILLE'S GOLDEN IPA </h2>
-        <p>A blend of the Pacific Northwest’s most intriguing aroma hop varieties are used in this golden Ale.  Very complex hop flavors and a smooth finish.  Probably the best IPA you will ever have. Ever. <br>
-        7.5% ABV 80 IBU </p>
-    </div>
+            </div>
+        </article>
+        <h1> Farm Dog Beers</h1>
+        <article id="farm-dog-beers">
+            <div class="beer-item">
+                <h2> CAMILLE'S GOLDEN IPA </h2>
+                <p>A blend of the Pacific Northwest’s most intriguing aroma hop varieties are used in this golden Ale.
+                    Very complex hop flavors and a smooth finish. Probably the best IPA you will ever have. Ever. <br>
+                    7.5% ABV 80 IBU </p>
+            </div>
 
-    <div class="individual">
-            <h2> CAMILLE'S GOLDEN IPA- FRESH HOP</h2>
-            <p>Only brewed once a year with Cascade, Chinook and Nugget hops grow onsite!<br>
-            7.5% ABV 80 IBU </p>
-        </div>
-    <div class="individual">
-            <h2> CALI'S BLACK IPA </h2>
-            <p>Dark malty IPA with a light citrus zest, dry hopped with Australian Galaxy hops. <br>
-            6.5% ABV 104 IBU </p>
-        </div>
-</div>
+            <div class="beer-item">
+                <h2> CAMILLE'S GOLDEN IPA - FRESH HOP</h2>
+                <p>Only brewed once a year with Cascade, Chinook and Nugget hops grow onsite!<br>
+                    7.5% ABV 80 IBU </p>
+            </div>
+            <div class="beer-item">
+                <h2> CALI'S BLACK IPA </h2>
+                <p>Dark malty IPA with a light citrus zest, dry hopped with Australian Galaxy hops. <br>
+                    6.5% ABV 104 IBU </p>
+            </div>
+        </article>
+    </section>
 {% endblock %}

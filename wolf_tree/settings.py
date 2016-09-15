@@ -38,9 +38,12 @@ INSTALLED_APPS = [
     'sitepages',
     'blog',
     'beerfinder',
-    'schedule',
     'djangobower',
-'easy_thumbnails',
+    'easy_thumbnails',
+    'filer',
+    'mptt',
+    'calendarium',
+    'polymorphic',
 ]
 
 MIDDLEWARE = [
@@ -65,7 +68,8 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages'
+
             ],
         },
     },
@@ -126,12 +130,12 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "staticfiles"),]
+    os.path.join(BASE_DIR, "staticfiles"), ]
 
 STATICFILES_FINDERS = ['djangobower.finders.BowerFinder',
                        'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-]
+                       'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+                       ]
 
 BOWER_COMPONENTS_ROOT = 'C:/Users/adamtwood/Desktop/projects/WolfTreeCapstone/wolf_tree/bower_components/'
 
